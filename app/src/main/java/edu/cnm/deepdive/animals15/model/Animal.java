@@ -2,6 +2,7 @@ package edu.cnm.deepdive.animals15.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import edu.cnm.deepdive.animals15.service.WebServiceProxy;
 
 import java.util.UUID;
 
