@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             adapter = new ArrayAdapter<>(
-                                    MainActivity.this, R.layout.support_simple_spinner_dropdown_item, animals);
+                                    MainActivity.this, R.layout.item_animal_spinner, animals);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
                             animalSelector.setAdapter(adapter);
                         }
                     });
