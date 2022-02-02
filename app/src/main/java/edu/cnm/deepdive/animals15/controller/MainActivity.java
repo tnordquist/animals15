@@ -52,29 +52,13 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected List<Animal> doInBackground(Void... voids) {
-            try {
-                Response<List<Animal>> response = WebServiceProxy.getInstance()
-                        .getAnimals()
-                        .execute();
-                if (response.isSuccessful()) {
-                    Log.d(getClass().getName(), response.body().toString());
-                    return response.body();
-                } else {
-                    Log.e(getClass().getName(), response.message());
-                    cancel(true);
-                    return null;
-                }
-            } catch (IOException e) {
-                Log.e(getClass().getName(), e.getMessage(), e);
-                cancel(true);
-                return null;
-            }
+            return null;
         }
 
         @Override
         protected void onPostExecute(List<Animal> animals) {
             super.onPostExecute(animals);
-            String url = animals.get(2).getImageUrl();
+            String url = animals.get(0).getImageUrl();
             adapter = new ArrayAdapter<>(
                     MainActivity.this, R.layout.item_animal_spinner, animals);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
