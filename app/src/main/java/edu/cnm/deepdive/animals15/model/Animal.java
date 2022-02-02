@@ -1,9 +1,11 @@
 package edu.cnm.deepdive.animals15.model;
 
+import androidx.annotation.NonNull;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import edu.cnm.deepdive.animals15.controller.MainActivity;
 import edu.cnm.deepdive.animals15.service.WebServiceProxy;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
@@ -63,5 +65,11 @@ public class Animal {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return title;
     }
 }
